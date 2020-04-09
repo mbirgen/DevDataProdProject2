@@ -1,0 +1,25 @@
+---
+title: "DDP_Project2"
+author: "Mariah Birgen"
+date: "4/8/2020"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+require(plotly)
+require(dplyr)
+today <- Sys.Date()
+```
+Today is `r today `.
+```{r load data}
+data("ChickWeight")
+CW <- ChickWeight
+
+```
+
+```{r, echo = FALSE}
+p <-plot_ly(CW, y = ~weight, color = ~Diet, type = "box") %>% 
+    layout(title = "Chick weights based on Diet type")
+p
+```
