@@ -1,0 +1,28 @@
+Developing Data Products Project 2
+========================================================
+author: Mariah Birgen
+date: April 14, 2020
+autosize: true
+
+First Slide
+========================================================
+```{r, echo = FALSE}
+require(plotly)
+require(dplyr)
+today <- Sys.Date()
+```
+
+Chick Weights
+=======================================================
+Today is `r today `.
+```{r load data}
+data("ChickWeight")
+CW <- ChickWeight
+
+```
+
+```{r, echo = FALSE}
+p <-plot_ly(CW, y = ~weight, color = ~Diet, type = "box") %>% 
+    layout(title = "Chick weights based on Diet type")
+p
+```
